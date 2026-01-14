@@ -110,6 +110,21 @@ POLYGON_PRIVATE_KEY=your_polygon_private_key_here
 
 - **Polygon**: Use Polygon RPC endpoints or Alchemy.
 
+## 🚀 VPS Recommendation – Low-Latency Execution
+
+**Latency = edge** in Polymarket.
+
+**Trading VPS** is the go-to low-latency hosting solution among serious prediction-market and crypto bot runners.
+
+- Sub-10 ms to major Polygon nodes  
+- Crypto/HFT-optimized locations  
+- Exceptional uptime & network performance  
+
+My referral link (supports ongoing development):  
+**[Trading VPS →](https://app.tradingvps.io/index.php?m=refer&id=795380)**
+
+Most users see noticeably better fills and lower slippage after switching.
+
 ## 🤝 Support & Community
 
 Fork, star, and contribute to the project on GitHub: [Polymarket Copy Trading Bot](https://github.com/soulcrancerdev/polymarket-copy-trading-bot)
