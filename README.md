@@ -1,4 +1,4 @@
-# Polymarket/Kalshi - Copy Trading & Arbitrage Bot (Python & Rust)
+# Polymarket - Copy Trading & Arbitrage Bot (Python & Rust)
 
 A powerful dual-implementation bot for automated copy trading and arbitrage on Polymarket (Polygon blockchain). Choose between a flexible Python version or an ultra-fast Rust version for optimized performance.
 
