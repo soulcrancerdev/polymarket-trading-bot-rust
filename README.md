@@ -10,7 +10,7 @@ A high-performance Rust-based automated trading bot that copies trades from succ
 ## How To Setup & Trade on Local n' Telegram
 
 ### Prod Version
-- Telegram Setup: https://www.youtube.com/watch?v=
+- Telegram Setup: https://www.youtube.com/watch?v= COMING SOON
 
 ### Demo Version
 - Local Setup: https://www.youtube.com/watch?v=UoLfidnpc1w
