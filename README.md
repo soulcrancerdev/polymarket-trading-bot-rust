@@ -9,9 +9,12 @@
 - 📱 Telegram: [@soulcrancerdev](https://t.me/soulcrancerdev)
 - 🐦 X: [@soulcrancerdev](https://x.com/soulcrancerdev)
 
-## 🛠️ How To Setup & Trade on the UI
+---
+## 🛠️ Unlock Your Setup & Trading Power with the UI
 
-- 📹 Telegram UI: https://www.youtube.com/watch?v=8PC0bKSgfhM
+- 📹 Watch the Telegram UI walkthrough: [Demo Video](https://www.youtube.com/watch?v=8PC0bKSgfhM)  
+- 🎯 Explore the Demo: [Demo Bot](https://t.me/poly_copy_tg_bot)  
+- 🚀 Launch your trading journey now: [Prod Bot](https://t.me/poly_copy_prod_tg_bot)  
 
 ---
 ## 🚀 Let's Trade!!
