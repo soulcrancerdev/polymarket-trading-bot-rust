@@ -1,7 +1,11 @@
-# Polymarket Copy Trading Bot
+# Polymarket Trading Bots
+- Polymarket Copy Trading Bot
+- Polymarket Arbitrage Bot
+- Polymarket Market Maker Bot
 
-A high-performance Rust-based automated trading bot that copies trades from successful Polymarket traders (whales) in real-time. Monitor blockchain events, execute copy trades automatically, and manage risk with built-in circuit breakers.
+Note: Providing the UI to traders: Telegram Bot, Desktop App.
 
+---
 ## Contact & Support
 
 - Telegram: [@soulcrancerdev](https://t.me/soulcrancerdev)
