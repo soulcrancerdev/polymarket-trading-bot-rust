@@ -1,0 +1,75 @@
+# ============================================================================
+# Polymarket Copy Trading Bot - Configuration File
+# ============================================================================
+# This file is used as a template for user configurations
+# Each user gets their own config file in users/{user_id}
+# NEVER commit user config files to git (they contain sensitive information)
+
+# ============================================================================
+# REQUIRED SETTINGS (Must fill these in)
+# ============================================================================
+
+# Comma-separated list of trader addresses to copy from
+# Example: 0x1234...,0x5678...
+# Or JSON array: ["0x1234...", "0x5678..."]
+USER_ADDRESSES=your_trader_addresses_here
+
+# Your proxy wallet address (the wallet that will execute trades)
+# Example: 0x1234567890123456789012345678901234567890
+PROXY_WALLET=your_proxy_wallet_here
+
+# Your wallet's private key (64-character hex string, no 0x prefix)
+# KEEP THIS SECRET! Never share or commit to git!
+# Example: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+PRIVATE_KEY=your_private_key_here
+
+# Polymarket CLOB HTTP URL
+# Example: https://clob.polymarket.com
+CLOB_HTTP_URL=https://clob.polymarket.com
+
+# Polymarket CLOB WebSocket URL
+# Example: wss://clob-ws.polymarket.com
+CLOB_WS_URL=wss://clob-ws.polymarket.com
+
+# RPC URL for blockchain interactions
+# Example: https://polygon-rpc.com
+RPC_URL=your_rpc_url_here
+
+# USDC contract address on Polygon
+# Example: 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+USDC_CONTRACT_ADDRESS=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174
+
+# ============================================================================
+# OPTIONAL SETTINGS (Defaults shown)
+# ============================================================================
+
+# MongoDB connection URI (optional, defaults to localhost)
+# MONGO_URI=mongodb://localhost:27017/polymarket_copytrading
+
+# Copy strategy: PERCENTAGE, FIXED, or ADAPTIVE
+COPY_STRATEGY=PERCENTAGE
+
+# Copy size (percentage for PERCENTAGE strategy, USD for FIXED)
+COPY_SIZE=10.0
+
+# Maximum order size in USD
+MAX_ORDER_SIZE_USD=100.0
+
+# Minimum order size in USD
+MIN_ORDER_SIZE_USD=1.0
+
+# Fetch interval in seconds
+# FETCH_INTERVAL=1
+
+# Request timeout in milliseconds
+# REQUEST_TIMEOUT_MS=10000
+
+# Network retry limit
+# NETWORK_RETRY_LIMIT=3
+
+# Trade aggregation enabled (true/false)
+# TRADE_AGGREGATION_ENABLED=false
+
+# Trade aggregation window in seconds
+# TRADE_AGGREGATION_WINDOW_SECONDS=300
+
